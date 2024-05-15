@@ -1,0 +1,44 @@
+[
+    {
+        "Name":"Server",
+        "Type":"Food & Beverage",
+        "Cost_Units":"dollars per hour",
+        "Cost":18,
+        "Equipment":[
+            {
+                "Name":"Serving Platter",
+                "Cost_Units":"dollars",
+                "Cost":5
+            }
+        ],
+        "Details": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas auctor elit id nulla laoreet maximus. Aliquam ac mauris et diam ornare pellentesque. Pellentesque sed dictum sem. Aenean maximus malesuada nibh eu euismod. Sed quis ultrices ipsum, sed fringilla magna. Sed vitae nisl pellentesque, sollicitudin odio accumsan, facilisis nisl. Quisque diam nibh, imperdiet at venenatis ac, volutpat a ligula. Nullam id turpis augue. Pellentesque suscipit vestibulum ipsum eu mollis."
+    },
+    {
+        "Name":"Banquet Captain",
+        "Type":"Food & Beverage",
+        "Cost_Units":"dollars per hour",
+        "Cost":25,
+        "Equipment":[
+            {
+                "Name":"Clipboard",
+                "Cost_Units":"dollars",
+                "Cost":2
+            }
+        ],
+        "Details": "Nunc iaculis bibendum aliquet. In vulputate suscipit libero non scelerisque. Maecenas suscipit et nibh ac aliquet. Donec facilisis sagittis rutrum. Etiam ac purus sed magna pharetra scelerisque vel quis libero. Aliquam a erat ligula. Quisque felis quam, ullamcorper lobortis magna sit amet, imperdiet placerat lacus. Ut porta rutrum odio, vel placerat dui. Morbi id urna sed sem feugiat rhoncus. Suspendisse potenti. Duis venenatis lectus non metus sagittis, vitae molestie nunc dapibus. Sed varius sapien lorem, vitae vestibulum eros porttitor et. Proin eget tempor diam. Nam quis velit risus. In hac habitasse platea dictumst. Donec vehicula elit aliquet, suscipit urna eget, iaculis tortor."
+    },
+    {
+        "Name":"Musician",
+        "Type":"Entertainment",
+        "Cost_Units":"dollars per hour",
+        "Cost":25,
+        "Equipment":[
+            {
+                "Name":"Instrument",
+                "Cost_Units":"dollars",
+                "Cost":200
+            }
+        ],
+        "Details": "Etiam turpis lectus, pellentesque in eros id, varius pretium turpis. Curabitur tincidunt porta risus. Aenean in nisi nunc. Donec aliquam in massa sed sodales. Nulla facilisi. Sed ut nisl iaculis, accumsan tortor vitae, blandit turpis. Vivamus tempor nec ante a viverra. Nam ac nulla nibh. Praesent nec ultricies nulla. Ut ac augue diam. Nam mi metus, elementum in efficitur eu, placerat quis velit. Nam at augue non nulla malesuada cursus ac vitae libero. Proin convallis volutpat libero."
+    }
+]

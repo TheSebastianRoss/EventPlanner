@@ -1,0 +1,85 @@
+[
+    {
+        "id": "42069",
+        "name": "Foobar",
+        "initial_funds": 50,
+        "budget_categories": [
+            {
+                "name": "Unallocated",
+                "fund_allocation": "auto",
+                "transactions": [
+                    {
+                        "name": "Bake sale expenditures",
+                        "amount": -50.00,
+                        "details": "Setup for fundraiser"
+                    },
+                    {
+                        "name": "Bake sale",
+                        "amount": 500.00,
+                        "details": "Fundraiser"
+                    }
+                ]
+            },
+            {
+                "name": "Test 1",
+                "fund_allocation": "0",
+                "transactions": [
+                ]
+            },
+            {
+                "name": "Test 2",
+                "fund_allocation": "0",
+                "transactions": [
+                ]
+            },
+            {
+                "name": "Test 3",
+                "fund_allocation": "0",
+                "transactions": [
+                ]
+            },
+            {
+                "name": "Test 4",
+                "fund_allocation": "0",
+                "transactions": [
+                ]
+            },
+            {
+                "name": "Test 5",
+                "fund_allocation": "0",
+                "transactions": [
+                ]
+            },
+            {
+                "name": "Test 6",
+                "fund_allocation": "0",
+                "transactions": [
+                ]
+            },
+            {
+                "name": "Test 7",
+                "fund_allocation": "0",
+                "transactions": [
+                ]
+            },
+            {
+                "name": "Test 8",
+                "fund_allocation": "0",
+                "transactions": [
+                ]
+            },
+            {
+                "name": "Test 9",
+                "fund_allocation": "0",
+                "transactions": [
+                ]
+            },
+            {
+                "name": "Test 10",
+                "fund_allocation": "0",
+                "transactions": [
+                ]
+            }
+        ]
+    }
+]
