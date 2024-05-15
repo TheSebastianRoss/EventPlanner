@@ -21,21 +21,38 @@ export default function PlanDetailsScreen() {
         );
     }
 
-    const menuList = plan.budget_categories || [
+    const menuMainList = [
+        {
+            "name": "Sync & Share",
+            "subtitle": "",
+            "link": `plans/${plan.id}/syncAndShare`
+        }
+    ]
+
+    const menuBudgetsList = plan.budget_categories || [
         {
             "name": "Unallocated",
             "fund_allocation": "auto",
             "transactions": []
         }
     ];
-    menuList.forEach( function(a) {
+    menuBudgetsList.forEach( function(a) {
         a.subtitle = (isValidNumber(a.fund_allocation))? a.fund_allocation: "";
         a.link = `plans/${plan.id}/${a.name}`;
+    });
+    menuBudgetsList.push({
+        "name": "Add Budget Category",
+        "subtitle": "",
+        "link": `plans/${plan.id}/addBudgetCategory`
     });
 
     let remainingBudget = plan.initial_funds;
 
     for(let i = 0; i < plan.budget_categories.length; i++) {
+        if(!plan.budget_categories[i].transactions) {
+            continue;
+        }
+
         for(let j = 0; j < plan.budget_categories[i].transactions.length; j++) {
             let amount = plan.budget_categories[i].transactions[j].amount;
             if(typeof amount == "number") {
@@ -46,20 +63,26 @@ export default function PlanDetailsScreen() {
 
     return (
         <View contentContainerStyle={styles.container}>
-            <ScrollView contentContainerStyle={styles.container}>
-                <Stack.Screen options={{ title: "Plan" }} />
+            <Stack.Screen options={{ title: "Plan" }} />
 
-                <View style={styles.panel}>
-                    <Text style={styles.name}>{plan.name}</Text>
-                    <SplitComponent item={{left: "Remaining Budget", right: `$${remainingBudget.toFixed(2)}`}}/>
-                    <View style={styles.subtitle}>
-                        <Text style={styles.subValue}>Initial Funds: ${plan.initial_funds.toFixed(2)}</Text>
-                    </View>
+            <View style={styles.panel}>
+                <Text style={styles.name}>{plan.name}</Text>
+                <SplitComponent item={{left: "Remaining Budget", right: `$${remainingBudget.toFixed(2)}`}}/>
+                <View style={styles.subtitle}>
+                    <Text style={styles.subValue}>Initial Funds: ${plan.initial_funds.toFixed(2)}</Text>
                 </View>
-            </ScrollView>
-            <View contentContainerStyle={styles.panel}>
                 <FlatList
-                data={menuList}
+                data={menuMainList}
+                contentContainerStyle={{ gap: 5 }}
+                keyExtractor={(item, index) => `${index} ${item.name}`}
+                renderItem={ ({ item }) => <ListItem item={item} />}
+                scrollEnabled={true}
+                />
+            </View>
+            <View style={styles.panel}>
+                <Text style={styles.name}>Budget Categories</Text>
+                <FlatList
+                data={menuBudgetsList}
                 contentContainerStyle={{ gap: 5 }}
                 keyExtractor={(item, index) => `${index} ${item.name}`}
                 renderItem={ ({ item }) => <ListItem item={item} />}
@@ -79,6 +102,7 @@ const styles = StyleSheet.create({
     panel: {
         backgroundColor: 'white',
         padding: 10,
+        marginVertical: 5,
         borderRadius: 5
     },
     container: {
