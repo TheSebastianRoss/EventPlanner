@@ -7,7 +7,7 @@ import { Stack } from 'expo-router';
 // https://www.youtube.com/watch?v=x7KE4JD-Q9A
 
 export default function App() {
-  const menuList = [
+  let menuList = [
     {
       "name": "Start New Plan",
       "link": "new-plan",

@@ -7,7 +7,7 @@ import { Stack } from 'expo-router';
 // https://www.youtube.com/watch?v=x7KE4JD-Q9A
 
 export default function NewPlanScreen() {
-  const menuList = [
+  let menuList = [
     {
       "name": "From Scratch",
       "link": "create-plan",

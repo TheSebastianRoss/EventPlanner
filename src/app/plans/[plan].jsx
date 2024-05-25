@@ -1,14 +1,11 @@
 import { View, Text, StyleSheet, ScrollView, FlatList } from 'react-native';
 import { useLocalSearchParams } from 'expo-router';
+import utils from '../utils.jsx';
 import plans from '../../../assets/data/plans.json';
 import SplitComponent from '../../components/SplitComponent.jsx';
 import ListItem from '../../components/ListItem.jsx';
 import { Stack } from 'expo-router';
 import { useState } from 'react';
-
-function isValidNumber(n){
-    return typeof n == 'number' && !isNaN(n) && isFinite(n);
-}
 
 export default function PlanDetailsScreen() {
     const params = useLocalSearchParams();
@@ -21,7 +18,7 @@ export default function PlanDetailsScreen() {
         );
     }
 
-    const menuMainList = [
+    let menuMainList = [
         {
             "name": "Sync & Share",
             "subtitle": "",
@@ -29,15 +26,16 @@ export default function PlanDetailsScreen() {
         }
     ]
 
-    const menuBudgetsList = plan.budget_categories || [
+    let menuBudgetsList = [
         {
             "name": "Unallocated",
             "fund_allocation": "auto",
             "transactions": []
         }
     ];
+    menuBudgetsList = utils.deepClone(plan.budget_categories) || menuBudgetsList;
     menuBudgetsList.forEach( function(a) {
-        a.subtitle = (isValidNumber(a.fund_allocation))? a.fund_allocation: "";
+        a.subtitle = (utils.isValidNumber(parseInt(a.fund_allocation)))? `$${parseInt(a.fund_allocation).toFixed(2)}`: "";
         a.link = `plans/${plan.id}/${a.name}`;
     });
     menuBudgetsList.push({
