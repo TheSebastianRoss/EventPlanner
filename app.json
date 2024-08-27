@@ -22,7 +22,8 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "package": "com.sross.EventPlanner"
     },
     "web": {
       "favicon": "./assets/favicon.png",
@@ -43,8 +44,11 @@
             "extraPods": [
               {
                 "name": "simdjson",
-                "configurations": ["Debug", "Release"],
-                "path": "../node_modules/@nozbe/simdjson", 
+                "configurations": [
+                  "Debug",
+                  "Release"
+                ],
+                "path": "../node_modules/@nozbe/simdjson",
                 "modular_headers": true
               }
             ]
